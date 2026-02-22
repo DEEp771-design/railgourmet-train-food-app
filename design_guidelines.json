@@ -1,0 +1,200 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "RailGourmet",
+      "tagline": "Dining at 100km/h",
+      "metaphor": "The Orient Express meets Tokyo Subway",
+      "vision": "A fusion of old-world railway luxury (serifs, gold) with modern digital precision (mono fonts, neon accents)."
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Playfair Display, serif",
+        "body": "Manrope, sans-serif",
+        "data": "JetBrains Mono, monospace"
+      },
+      "rules": {
+        "headings": "Use Playfair Display for all H1-H3. It adds culinary elegance. Weight: 700 or 900.",
+        "body": "Manrope is critical for legibility of PNR numbers and Prices. Use tight tracking for headlines, loose for body.",
+        "data": "Use JetBrains Mono for PNR, Train Numbers, Timestamps, and Prices. It implies 'ticket' and 'precision'."
+      },
+      "scale": {
+        "h1": "text-4xl md:text-6xl font-black tracking-tight",
+        "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+        "h3": "text-2xl font-semibold",
+        "body": "text-base leading-relaxed text-muted-foreground",
+        "caption": "text-xs font-mono uppercase tracking-widest text-muted-foreground"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#E65100",
+          "foreground": "#FFFFFF",
+          "description": "Saffron Blaze - Appetizing, high energy, Indian context."
+        },
+        "secondary": {
+          "DEFAULT": "#0F172A",
+          "foreground": "#FFFFFF",
+          "description": "Midnight Rail - Deep slate/blue for structure and contrast."
+        },
+        "accent": {
+          "DEFAULT": "#D4AF37",
+          "foreground": "#000000",
+          "description": "Antique Gold - For borders, active states, and premium feel."
+        },
+        "success": {
+          "DEFAULT": "#10B981",
+          "description": "Signal Green - For 'On Time' and 'Delivered'."
+        },
+        "background": {
+          "light": "#FDFBF7",
+          "dark": "#0A0A0A",
+          "description": "Warm Parchment for light mode (not sterile white)."
+        }
+      },
+      "usage": {
+        "light_mode": {
+          "background": "bg-[#FDFBF7]",
+          "text": "text-slate-900",
+          "border": "border-slate-200"
+        },
+        "dark_mode": {
+          "background": "bg-[#0A0A0A]",
+          "text": "text-slate-50",
+          "border": "border-slate-800"
+        }
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-12",
+        "section_gap": "gap-8 md:gap-16",
+        "element_gap": "gap-4"
+      },
+      "grid_systems": {
+        "user_dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6 (Bento Layout)",
+        "admin_dashboard": "grid grid-cols-1 md:grid-cols-4 gap-4 (High Density)",
+        "menu_list": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      },
+      "containers": {
+        "card": "rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300",
+        "glass_panel": "bg-white/70 dark:bg-black/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3 font-bold tracking-wide shadow-[0_4px_14px_0_rgba(230,81,0,0.39)] transition-transform active:scale-95",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-8 py-3 font-medium",
+        "outline": "border-2 border-primary text-primary hover:bg-primary/10 rounded-full px-8 py-3 font-bold"
+      },
+      "inputs": {
+        "style": "h-12 rounded-lg border-2 border-input bg-background px-4 font-mono text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "instruction": "Inputs should look like 'ticket fields'. Boxy, clear borders."
+      },
+      "cards": {
+        "menu_item": "group relative overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl",
+        "stat_card": "relative overflow-hidden rounded-xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-6"
+      }
+    },
+    "visual_enhancers": {
+      "gradients": {
+        "hero_overlay": "bg-gradient-to-t from-background via-background/80 to-transparent",
+        "golden_sheen": "bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent"
+      },
+      "textures": {
+        "grain": "Use a subtle SVG noise overlay on the main background to reduce digital sterility.",
+        "scanlines": "Optional: Very subtle scanlines on Admin Dashboard for that 'Control Room' vibe."
+      },
+      "shadows": {
+        "elevation_1": "shadow-[0_2px_8px_rgba(0,0,0,0.08)]",
+        "elevation_2": "shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
+        "neon_glow": "shadow-[0_0_12px_rgba(230,81,0,0.5)]"
+      }
+    },
+    "motion": {
+      "transitions": "transition-all duration-300 ease-out",
+      "micro_interactions": {
+        "hover_lift": "hover:-translate-y-1",
+        "button_press": "active:scale-95",
+        "focus_ring": "focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      },
+      "page_transitions": "Animate opacity and y-axis (framer-motion initial={{opacity:0, y:20}} animate={{opacity:1, y:0}})"
+    }
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://images.pexels.com/photos/32434396/pexels-photo-32434396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Modern high-speed train in motion",
+        "usage": "Landing page hero section background"
+      },
+      {
+        "category": "auth_background",
+        "url": "https://images.unsplash.com/photo-1761477103792-fc535e837d7b",
+        "alt": "Abstract modern subway station architecture",
+        "usage": "Login/Register page split background"
+      },
+      {
+        "category": "food_thali_luxury",
+        "url": "https://images.pexels.com/photos/29148133/pexels-photo-29148133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Premium Indian Thali",
+        "usage": "Featured menu item"
+      },
+      {
+        "category": "food_snack",
+        "url": "https://images.unsplash.com/photo-1616813769023-d0557572ddbe",
+        "alt": "Crispy fried snacks",
+        "usage": "Menu list item"
+      },
+      {
+        "category": "food_thali_standard",
+        "url": "https://images.pexels.com/photos/5775684/pexels-photo-5775684.jpeg",
+        "alt": "Standard Thali",
+        "usage": "Menu list item"
+      }
+    ],
+    "icons": {
+      "library": "Lucide React",
+      "instruction": "Use Lucide icons for UI elements. For the 'Train' icon, use the 'TrainFront' or 'TrainTrack' icon."
+    }
+  },
+  "specific_instructions": {
+    "admin_panel": {
+      "theme": "Dark Mode Default",
+      "layout": "Sidebar navigation + Top Header. Content area uses 'High Density' grid.",
+      "features": [
+        "Use 'Badge' components for status (Pending: Yellow, Approved: Green).",
+        "Tables must be dense (p-2) with monospace font for data.",
+        "Add a 'Command Center' feel with dark slate backgrounds and neon accents."
+      ]
+    },
+    "vendor_panel": {
+      "theme": "Hybrid (Dark Sidebar, Light Content or Dark Content based on preference)",
+      "focus": "Order Management needs to be big and clear.",
+      "layout": "Kanban style board for Order Status (Pending -> Preparing -> On Way -> Delivered)."
+    },
+    "user_app": {
+      "theme": "Light Mode Default (Appetizing)",
+      "hero": "Search bar must be the 'Hero'. Big, bold inputs for PNR/Train No.",
+      "pnr_input": "Split the PNR input into clear, large digits (like an OTP input) or a very large single input field.",
+      "cart": "Floating bottom bar for cart summary on mobile.",
+      "tracking": "Vertical timeline stepper with animated pulses for current status."
+    }
+  },
+  "universal_guidelines": [
+    "Do not use gradients for dark colors.",
+    "Avoid generic centered layouts; use asymmetry for interest.",
+    "Use glassmorphism with backdrop-blur-md for floating elements (navbars, modals).",
+    "All interactive elements MUST have a data-testid attribute.",
+    "Use 'sonner' for toast notifications.",
+    "Customize Shadcn components to match the 'Saffron & Slate' theme.",
+    "NEVER use transparent backgrounds for dropdowns or headers without a blur/scrim.",
+    "Images MUST be lazy-loaded."
+  ],
+  "accessibility": {
+    "contrast": "Ensure text meets WCAG AA standards. Use Slate-900 on Parchment, or Slate-50 on Midnight.",
+    "focus": "Visible focus rings on all inputs/buttons.",
+    "aria": "Use proper ARIA labels for icon-only buttons."
+  }
+}
