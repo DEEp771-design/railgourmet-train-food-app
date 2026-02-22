@@ -1,22 +1,22 @@
-import { Resend } from 'resend';
-
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-
 export const sendOTP = async (email, otp, name) => {
   // Mock OTP sending - logs to console
-  // When RESEND_API_KEY is added, this will send real emails
+  // Real email integration ready when RESEND_API_KEY is added to .env
   
-  if (!resend) {
-    console.log('\n🔐 OTP EMAIL (MOCK MODE)');
-    console.log('=' .repeat(50));
-    console.log(`To: ${email}`);
-    console.log(`Name: ${name}`);
-    console.log(`OTP Code: ${otp}`);
-    console.log('=' .repeat(50));
-    console.log('✅ Add RESEND_API_KEY to .env for real email delivery\n');
-    return { success: true, mock: true };
-  }
-
+  console.log('\n🔐 OTP EMAIL (MOCK MODE)');
+  console.log('='.repeat(50));
+  console.log(`To: ${email}`);
+  console.log(`Name: ${name}`);
+  console.log(`OTP Code: ${otp}`);
+  console.log('='.repeat(50));
+  console.log('✅ Add RESEND_API_KEY to .env for real email delivery\n');
+  
+  return { success: true, mock: true };
+  
+  /* Real email sending (uncomment when RESEND_API_KEY is added):
+  
+  import { Resend } from 'resend';
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  
   try {
     await resend.emails.send({
       from: 'RailGourmet <onboarding@resend.dev>',
@@ -37,4 +37,5 @@ export const sendOTP = async (email, otp, name) => {
     console.error('Failed to send OTP:', error);
     throw new Error('Failed to send OTP');
   }
+  */
 };
